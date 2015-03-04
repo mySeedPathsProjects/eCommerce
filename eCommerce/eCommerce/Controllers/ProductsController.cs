@@ -9,7 +9,7 @@ namespace eCommerce.Controllers
     public class ProductsController : Controller
     {
         //this is our data context, think of it as the gateway to the database.  it's how we store and retrieve information from the database.
-        private Models.productsDatabaseEntities db = new Models.productsDatabaseEntities();
+        private Models.ProductEntities db = new Models.ProductEntities();
 
         // GET: Products
         public ActionResult Index()

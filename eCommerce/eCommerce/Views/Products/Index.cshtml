@@ -1,4 +1,5 @@
-﻿@model IEnumerable<eCommerce.Models.Product>
+﻿@model object
+@*on the first line we declare our view's model, this is the object that dictates the type of the "Model" property, and is primarily how we pass data from the controller to the view*@
 @{
     ViewBag.Title = "Index";
 }
@@ -6,20 +7,23 @@
 <h2>Our Products</h2>
 
 <div class="row">
-   @foreach (var item in Model)
-   {
-       <div class="col-md-4 text-center product-listing">
-           <a href="@Url.Action("Details", "Products", new {id = item.ProductID})" class="product-listing-link">
-               <img class="img-thumbnail" src="@item.ProductImages.First().imageURL" />
+    @*foreach product in the list of product (Model), display this block... *@
+
+    <div class="col-md-4 text-center product-listing">
+           @*link to go to the product detail page for this particular product.  We have this because the user should be able to click on the image, product name or price to go see more information, they should not HAVE to click the button*@
+           <a href="#" class="product-listing-link">
+               @*display the image src for the first product image in the database*@
+               <img class="img-thumbnail" src="image source goes here" />
                <div class="name">
-                   <strong>@item.Name</strong>
+                   <strong>Product Name</strong>
                </div>
                <div class="price">
-                   @item.UnitPrice.ToString("C")
+                   Product price, formatted as currency
                </div>
            </a>
-           <a href="@Url.Action("Details", "Products", new {id = item.ProductID})" class="btn btn-default">More Info</a>
+           @*link to go to the product detail page for this particular product*@
+           <a href="#" class="btn btn-default">More Info</a>
          
        </div>
-   }
+   
 </div>

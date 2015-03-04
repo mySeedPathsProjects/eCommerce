@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="productsDatabaseModelStoreContainer" CdmEntityContainer="productsDatabaseEntities">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ProductEntities">
     <EntitySetMapping Name="ProductImages">
-      <EntityTypeMapping TypeName="productsDatabaseModel.ProductImage">
+      <EntityTypeMapping TypeName="Model.ProductImage">
         <MappingFragment StoreEntitySet="ProductImages">
           <ScalarProperty Name="ImageID" ColumnName="ImageID" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
@@ -11,7 +11,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="productsDatabaseModel.Product">
+      <EntityTypeMapping TypeName="Model.Product">
         <MappingFragment StoreEntitySet="Products">
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="Name" ColumnName="Name" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="productsDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="ProductImage">
     <Key>
       <PropertyRef Name="ImageID" />
@@ -7,7 +7,7 @@
     <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <Property Name="imageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Product" Relationship="Self.FK__ProductIm__Produ__145C0A3F" FromRole="ProductImages" ToRole="Products" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__ProductIm__Produ__4E88ABD4" FromRole="ProductImages" ToRole="Products" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -18,9 +18,9 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-    <NavigationProperty Name="ProductImages" Relationship="Self.FK__ProductIm__Produ__145C0A3F" FromRole="Products" ToRole="ProductImages" />
+    <NavigationProperty Name="ProductImages" Relationship="Self.FK__ProductIm__Produ__4E88ABD4" FromRole="Products" ToRole="ProductImages" />
   </EntityType>
-  <Association Name="FK__ProductIm__Produ__145C0A3F">
+  <Association Name="FK__ProductIm__Produ__4E88ABD4">
     <End Role="Products" Type="Self.Product" Multiplicity="1" />
     <End Role="ProductImages" Type="Self.ProductImage" Multiplicity="*" />
     <ReferentialConstraint>
@@ -32,10 +32,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="productsDatabaseEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ProductEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ProductImages" EntityType="Self.ProductImage" />
     <EntitySet Name="Products" EntityType="Self.Product" />
-    <AssociationSet Name="FK__ProductIm__Produ__145C0A3F" Association="Self.FK__ProductIm__Produ__145C0A3F">
+    <AssociationSet Name="FK__ProductIm__Produ__4E88ABD4" Association="Self.FK__ProductIm__Produ__4E88ABD4">
       <End Role="Products" EntitySet="Products" />
       <End Role="ProductImages" EntitySet="ProductImages" />
     </AssociationSet>

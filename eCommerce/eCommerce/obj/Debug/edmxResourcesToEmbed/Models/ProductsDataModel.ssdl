@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="productsDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="ProductImages">
     <Key>
       <PropertyRef Name="ImageID" />
@@ -18,7 +18,7 @@
     <Property Name="MSRP" Type="money" Nullable="false" />
     <Property Name="UnitPrice" Type="money" Nullable="false" />
   </EntityType>
-  <Association Name="FK__ProductIm__Produ__145C0A3F">
+  <Association Name="FK__ProductIm__Produ__4E88ABD4">
     <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="ProductImages" Type="Self.ProductImages" Multiplicity="*" />
     <ReferentialConstraint>
@@ -30,10 +30,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="productsDatabaseModelStoreContainer">
+  <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ProductIm__Produ__145C0A3F" Association="Self.FK__ProductIm__Produ__145C0A3F">
+    <AssociationSet Name="FK__ProductIm__Produ__4E88ABD4" Association="Self.FK__ProductIm__Produ__4E88ABD4">
       <End Role="Products" EntitySet="Products" />
       <End Role="ProductImages" EntitySet="ProductImages" />
     </AssociationSet>
