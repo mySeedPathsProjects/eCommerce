@@ -1,0 +1,25 @@
+﻿@model IEnumerable<eCommerce.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Our Products</h2>
+
+<div class="row">
+   @foreach (var item in Model)
+   {
+       <div class="col-md-4 text-center product-listing">
+           <a href="@Url.Action("Details", "Products", new {id = item.ProductID})" class="product-listing-link">
+               <img class="img-thumbnail" src="@item.ProductImages.First().imageURL" />
+               <div class="name">
+                   <strong>@item.Name</strong>
+               </div>
+               <div class="price">
+                   @item.UnitPrice.ToString("C")
+               </div>
+           </a>
+           <a href="@Url.Action("Details", "Products", new {id = item.ProductID})" class="btn btn-default">More Info</a>
+         
+       </div>
+   }
+</div>
