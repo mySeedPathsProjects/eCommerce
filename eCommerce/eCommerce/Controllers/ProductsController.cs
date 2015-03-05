@@ -22,6 +22,10 @@ namespace eCommerce.Controllers
         {
             //return just the one product the user wants to see
             var theProduct = db.Products.Find(id);
+            if (theProduct == null)
+            {
+                return View("Error");
+            }
             return View(theProduct);
         }
     }
